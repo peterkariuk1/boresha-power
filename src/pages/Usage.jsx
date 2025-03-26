@@ -1,50 +1,40 @@
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { AnimatedPage } from "../components/AnimatedPage";
+import { LeftNav } from "../components/LeftNav.jsx";
+import { Analytics } from "../components/Analytics.jsx";
+import { News } from "../components/News.jsx";
+import { Reports } from "../components/Reports.jsx";
+import { Settings } from "../components/Settings.jsx";
+
 import "../styles/Usage.css";
-import boreshaLogo from "../assets/boresha-logo.png";
-import analyticsIcon from '../assets/analytics.png'
-import newsIcon from '../assets/news.png'
-import overviewIcon from '../assets/overview.png'
-import recommendIcon from '../assets/recommend.png'
-import settingsIcon from '../assets/settings.png'
 
 export const Usage = () => {
+  const location = useLocation();
+
   return (
     <div className="usage-page">
-      <div className="left-section">
-        <div>
-          <img src={boreshaLogo} />
-          <p>
-            Boresha<span>Power</span>
-          </p>
-        </div>
-        <nav>
-          <div className="nav-top">
-            <div>
-              <img src={analyticsIcon} />
-              Analytics
-            </div>
-            <div>
-              <img src={newsIcon} />
-              News
-            </div>
-            <div>
-              <img src={overviewIcon} />
-              Overview
-            </div>
-            <div>
-              <img src={recommendIcon} />
-              Recommendations
-            </div>
-          </div>
-          <div className="nav-bottom">
-            <div>
-              <img src={settingsIcon} />
-              Settings
-            </div>
-          </div>
-        </nav>
-      </div>
+      {/* ✅ LeftNav stays fixed */}
+      <LeftNav />
+
+      {/* ✅ Only right-section content changes */}
       <div className="right-section">
-        <p>right</p>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <Routes location={location}>
+              <Route path="/" element={<AnimatedPage><Analytics /></AnimatedPage>} />
+              <Route path="/news" element={<AnimatedPage><News /></AnimatedPage>} />
+              <Route path="/reports" element={<AnimatedPage><Reports /></AnimatedPage>} />
+              <Route path="/settings" element={<AnimatedPage><Settings /></AnimatedPage>} />
+            </Routes>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
