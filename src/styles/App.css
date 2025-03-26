@@ -1,6 +1,10 @@
-
+body{
+  margin: 0;
+  font-family: Roboto;
+}
 :root{
   --primary-color:#f6fafc;
   --secondary-color:#163466;
   --accent-color:#faca22;
+  --tertiary-color:#edf9ff;
 }
