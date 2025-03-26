@@ -18,9 +18,12 @@ function App() {
       <Route path="/appliances" element={<Appliances />} />
     </Routes>
   );
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 17fa87bdbca07c5f070effd79cb7f7a91bf04ce3
 }
 
 export default App;
