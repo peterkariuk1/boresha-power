@@ -1,71 +1,67 @@
-import React, {useState} from 'react'
-import {useNavigate, Link} from "react-router-dom"
-import "../styles/App.css";
-import "../styles/register.css";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import "../styles/Register.css"; 
 
 const Register = () => {
-  const [user, setUser] = useState({
-    name:"",
-    email:"",
-    password:"",
-    passwordConfirm:""
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
- 
-const navigate = useNavigate();
+  const handleRegister = (e) => {
+    e.preventDefault();
 
-const handleChange = (e) => {
-  setUser({...user, [e.target.name]: e.target.value});
-};
+    const user = { name, email, password };
+    localStorage.setItem("user", JSON.stringify(user));
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  localStorage.setItem("user",JSON.stringify(user));
-  alert("You have been registered successfully!Please log in.");
-  navigate("/login");
-};
+    alert("Registration successful");
+    navigate("/login");
+  };
 
-  return ( 
-    
-      <div className="signup-container">
-        <h2>Signup</h2>
-        <form onSubmit={handleSubmit}>
-          <input 
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={user.name}
-          onChange={handleChange}required></input>
+  return (
+    <div className="register-container">
+      
+      <div className="register-image"></div>
 
+      <div className="register-form">
+        <h2>Register</h2>
+        <form onSubmit={handleRegister}>
+          <label>Name:</label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-        <input 
-        type="text"
-        name="email"
-        placeholder="Enter your email"
-        value={user.email}
-        onChange={handleChange} />
+          <label>Email:</label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input 
-        type="text"
-        name="password"
-        placeholder="Enter password"
-        value={user.password}
-        onChange={handleChange} />
+          <label>Password:</label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <input 
-        type="text"
-        name="passwordConfirm"
-        placeholder="Confirm password"
-        value={user.passwordConfirm}
-        onChange={handleChange} />
+          <button type="submit">Register</button>
         </form>
 
-<p>Already have an account?<Link to ="/login">Login</Link></p>
-<button type="submit" onClick={handleSubmit}>Register</button>
-
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </div>
-  
+    </div>
   );
 };
 
-export default Register
+export default Register;

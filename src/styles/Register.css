@@ -1,1 +1,110 @@
 @import"./App.css";
+
+.register-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--secondary-color); 
+}
+
+
+.register-image {
+  flex: 1;
+  background: url("../assets/savingmeter.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.register-image::before {
+  content: "Join Us and start your journey towards saving energy!";
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.register-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+button {
+  width: 80%;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #d9a700;
+}
+
+
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+p a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    display: none; 
+  }
+
+  .login-form {
+    width: 100%;
+    border-radius: 0;
+  }
+}

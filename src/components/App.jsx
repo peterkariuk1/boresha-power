@@ -18,10 +18,7 @@ function App() {
       <Route path="/appliances" element={<Appliances />} />
     </Routes>
   );
-
-
-
-
+}
 
 export default App;
 

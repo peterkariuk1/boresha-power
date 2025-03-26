@@ -1,51 +1,64 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/App.css";
 import "../styles/GetStarted.css";
-import { Link} from "react-router-dom"
-import appliances from "../assets/appliances.jpeg";
-import homes from "../assets/homes.jpeg";
-import saving from "../assets/saving.jpeg";
 
-const images =[saving, homes, appliances];
+const slides = [
+  {
+    image: "src/assets/homes.jpeg",
+    text: "Welcome to Boresha Power! Our mission is to help you track, understand, and optimize your energy consumption with ease.",
+  },
+  {
+    image: "src/assets/saving.jpeg",
+    text: "Discover energy-saving tips and reduce your electricity costs effortlessly.",
+  },
+  {
+    image: "src/assets/save.jpeg",
+    text: "Integrate sustainable energy solutions and go green with Boresha Power!",
+  },
+];
 
 const GetStarted = () => {
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const nextSlide = () => {
-  setCurrentIndex((prevIndex) => (prevIndex + 1) %images.length);
-};
+  const nextSlide = () => {
+    setCurrentSlide((prevIndex) => (prevIndex + 1) % slides.length);
+  };
 
-const prevSlide = () => {
-  setCurrentIndex((prevIndex) => prevIndex === 0 ? images.length -1 : prevIndex -1);
-};
-
-useEffect(() => {
-  const interval = setInterval(() => {
-    nextSlide();
-  }, 5000); 
-
-  return () => clearInterval(interval);
-
-}, []);
-
-
+  const prevSlide = () => {
+    setCurrentSlide((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
+  };
   return (
+    <div className="getting-started">  
 
-    <div className="getting-started">
-      <div className="caroussel">
-      <img src={images[currentIndex]} alt="Slide" className="slide-image" />
 
-   
-      <button className="prev-button" onClick={prevSlide}>❮</button>
-      <button className="next-button" onClick={nextSlide}>❯</button>
-    </div>
+        <div className="slide-content">
+
+      <img src="src/assets/banner.jpeg" alt="Boresha Power" />
       
-      <h1>Welcome to Boresha Power!</h1>
-     
-      <h1 className="header">Welcome to Boresha Power!Our mission is help you track, understand , and optimize your energy consumption with ease.</h1>
-      <Link to="/Login">
-<button>Get started</button>
-</Link>
+
+                  <p>{slides[currentSlide].text}</p></div>
+
+
+      <div
+        className="slide"
+        style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
+      > 
+         
+          <div className="nav-buttons">
+            <button className="prev-button" onClick={prevSlide}>❮</button>
+            <button className="next-button" onClick={nextSlide}>❯</button>
+          </div>
+         
+          {currentSlide === slides.length - 1 && (
+            <Link to="/Login">
+              <button className="getstarted-btn">Get Started</button>
+            </Link>
+          )}
+      
+      </div>
     </div>
   );
 };
