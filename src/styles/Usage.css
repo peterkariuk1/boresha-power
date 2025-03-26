@@ -40,7 +40,7 @@
 .left-section nav {
   display: flex;
   flex-direction: column;
-  gap: 30vh;
+  gap: 10vh;
   color: var(--secondary-color);
 }
 .left-section nav img {
@@ -54,4 +54,54 @@
   padding-left: 10px;
   gap: 5px;
   margin-bottom: 30px;
+  padding: 10px 4px;
+  border-radius: 15px;
+  transition: 0.5s ease-in-out background-color;
+}
+.nav-top div:hover,
+.nav-bottom div:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+/* Individual pages in the analytics page */
+
+.analytics-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.analytics-top {
+  display: flex;
+  gap: 10px;
+  height: 45vh;
+  padding-left: 20px;
+}
+.analytics-top div {
+  background-color: beige;
+}
+.top-appliance-rating {
+  width: 25%;
+}
+.bill-estimate {
+  width: 25%;
+}
+.pie-chart-container {
+  width: 46%;
+}
+
+.analytics-bottom {
+  display:flex;
+  gap: 10px;
+  height: 38vh;
+  margin: 20px;
+}
+.analytics-bottom div{
+  /* background-color: aquamarine; */
+}
+.bar-graph-container{
+  width: 50%;
+}
+.tips-container{
+  width: 50%;
 }
