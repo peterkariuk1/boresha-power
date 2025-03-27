@@ -76,10 +76,14 @@ export const Analytics = () => {
           </div>
           <div className="pie-chart-container">
             <h1>
-              {" "}
               Daily Energy Usage in Graph <span>(kWh)</span>
             </h1>
-            <EnergyPieChart />
+            <div className="pie-chart-data">
+              <EnergyPieChart />
+              <div>
+                
+              </div>
+            </div>
           </div>
         </div>
         <div className="analytics-bottom">
