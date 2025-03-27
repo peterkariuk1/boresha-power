@@ -268,6 +268,62 @@ width:100%;
 
 
 
+/*Settings page*/
+.header{
+display: flex;
+flex-direction:row;
+justify-content:space-between; 
+}
+
+.btn-logout{
+  width:90px;
+  border-radius:10px 50px;
+
+
+}
+
+
+
+.settings-item {
+  margin-bottom: 20px;
+}
+
+.btn-add {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: navy;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+/* Appliance list styling */
+.appliance-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.appliance {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius:25px;
+}
+
+.appliance.selected {
+  border-color:background-color;
+  background-color:var(--secondary-color);
+}
+
+=======
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -303,4 +359,4 @@ button:hover {
 button:active {
   background-color: #004494;
   transform: scale(0.98);
-}
+
