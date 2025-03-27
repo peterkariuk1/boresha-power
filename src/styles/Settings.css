@@ -1,0 +1,59 @@
+.header{
+  display: flex;
+  
+}
+
+.settings-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.settings-item {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background-color: navy;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+/* Appliance list styling */
+.appliance-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.appliance {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.appliance.selected {
+  border-color: navy;
+  background-color: lightblue;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode button {
+  background-color: lightgray;
+  color: black;
+  
+}
