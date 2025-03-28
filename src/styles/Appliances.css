@@ -32,6 +32,10 @@
   text-align: center;
   color: var(--secondary-color);
 }
+.container h2 {
+  font-size: 2em;
+  color: var(--secondary-color);
+}
 
 .appliance-item {
   display: inline-block;

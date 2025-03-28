@@ -115,9 +115,9 @@
 }
 .pie-chart-container {
   width: 46%;
-  padding-top:10px;
+  padding-top: 10px;
 }
-.pie-chart-container h1{
+.pie-chart-container h1 {
   color: black;
   font-size: 25px;
 }
@@ -134,23 +134,23 @@
 .bar-graph-container {
   width: 50%;
 }
-.bar-graph-container h1{
+.bar-graph-container h1 {
   color: black;
   font-size: 25px;
-
-}.bar-graph-container h1 span{
+}
+.bar-graph-container h1 span {
   font-size: 12px;
-
 }
 .tips-container {
   width: 50%;
-  background-color:#95b5ec2a;
-  border-radius:20px;
-}.tips-container h1 {
+  background-color: #95b5ec2a;
+  border-radius: 20px;
+}
+.tips-container h1 {
   color: var(--secondary-color);
   font-size: 22px;
 }
-.tips-title-container{
+.tips-title-container {
   display: flex;
 }
 .tip-container {
@@ -206,37 +206,44 @@
   }
 }
 
-
 /*News Page*/
 @keyframes slideInOut {
-  0% { transform: translateX(-50px); opacity: 0; }
-  50% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(50px); opacity: 0; }
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
 }
-.heading{
+.heading {
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
 
-color:var(--secondary-color);
-
+  color: var(--secondary-color);
 }
-.heading2{
+.heading2 {
   align-items: center;
   justify-content: center;
- display:flex;
- color:var(--secondary-color);
- margin-bottom: 20px;
- animation: slideInOut 3s infinite alternate ease-in-out;
+  display: flex;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  animation: slideInOut 3s infinite alternate ease-in-out;
 }
 
-.newspage{
-display:flex;
-flex-direction: row;
-gap:10px;
-padding-left: 5px;
-
+.newspage {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-left: 5px;
 }
+
 
 .tips{
 height:80vh;
@@ -244,10 +251,17 @@ background-color: beige;
 width:30%;
 border-radius: 20px ;
 
+.tips {
+  height: 80vh;
+
+
+  background-color: beige;
+  width: 30%;
+  border-radius: 20px;
 }
 
-.tip-img{
-width:100%;
+.tip-img {
+  width: 100%;
   height: 40%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
@@ -255,28 +269,31 @@ width:100%;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 .tip-img:hover {
-  transform: scale(1.1); filter: brightness(80%);
-  cursor:pointer;
+  transform: scale(1.1);
+  filter: brightness(80%);
+  cursor: pointer;
 }
 
-.tip-text{
+.tip-text {
   padding: 10px;
-
-  
 }
-
-
 
 /*Settings page*/
-.header{
-display: flex;
-flex-direction:row;
-justify-content:space-between; 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
 
 .btn-logout{
   width:90px;
   border-radius:10px 50px;
+
+
+.btn-logout {
+  width: 90px;
+  border-radius: 10px 50px;
 
 }
 
@@ -310,12 +327,12 @@ button:hover {
   padding: 30px;
   border: 1px solid gray;
   cursor: pointer;
-  border-radius:25px;
+  border-radius: 25px;
 }
 
 .appliance.selected {
-  border-color:background-color;
-  background-color:var(--secondary-color);
+  border-color: background-color;
+  background-color: var(--secondary-color);
 }
 
 
@@ -348,14 +365,91 @@ button:hover {
   background-color: var(--secondary-color);
   color: white;
   transform: scale(1.1);
-
 }
 
 button:active {
   background-color: #004494;
   transform: scale(0.98);
-
 }
+.pie-chart-data {
+  display: flex;
+  width: 100%;
+}
+/* Styless for the reports page */
+.reports-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 110vh;
+  justify-content: center;
+}
+.reports-container h1{
+  color: var(--secondary-color);
+}
+.reports-container .top {
+  height: 33%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.reports-container .top div{
+  width: 40%;
+  border-radius: 15px;
+}
+.bar-1 h2,.bar-2 h2{
+  color: var(--secondary-color);
+  font-size: 20px;
+}
+.reports-container .mid {
+  height: 25%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.reports-container .mid div{
+  background-color: rgb(225, 255, 218);
+  width: 43%;
+  border-radius: 15px;
+}
+.reports-container .bottom {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+}
+.reports-container .bottom div{
+  width: 87%;
+  border-radius: 20px;
+}
+.advice-bar-1,
+.advice-bar-2{
+ display: flex; 
+ flex-direction: column;
+}.advice-bar-1 div,
+.advice-bar-2 div{
+ display: flex; 
+gap: 30px;
+ align-items: center;
+ width:100%;
+}
+.advice-bar-1 div img,
+.advice-bar-2 div img{
+  width: 40px;
+  height: 40px;
+}
+.advice-bar-1 div h1,
+.advice-bar-2 div h1{
+  font-size: 18px;
+}.advice-bar-1 div h2 span,
+.advice-bar-2 div h2 span{
+  font-size: 10px;
+  color: rgb(55, 55, 55);
+}.advice-bar-1 div h2 ,
+.advice-bar-2 div h2 {
+  font-size: 19px;
+  color: rgb(0, 4, 52);
+}
+
+
 
 
 /*Reports page*/
@@ -370,5 +464,5 @@ button:active {
 }
 
 .chart{
-  
+
 }

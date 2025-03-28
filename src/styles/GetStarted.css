@@ -54,6 +54,7 @@ body {
   opacity: 1; 
   transform: translateY(0);
   margin-top:0;
+
 }
 
 .slide-content img {
@@ -62,6 +63,7 @@ body {
   height: 100%;
  margin-bottom: 20px;
  margin-top: 0;
+ 
 }
 
 .slide-content p {
