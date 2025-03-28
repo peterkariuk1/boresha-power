@@ -7,8 +7,25 @@ import cashLogo from "../assets/cashLogo.png";
 import energyLogo from "../assets/energyLogo.png";
 import tipLogo from "../assets/tipLogo.png";
 import "../styles/Usage.css";
+import axios from "axios";
+
 
 export const Analytics = () => {
+  const [energyData, setEnergyData] = useState([]);
+  const getEnergyData = async () => {
+    try {
+      const response = await axios.get("/api/data");
+      setEnergyData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getEnergyData();
+  }, []);
+
   const energyTips = [
     "Did you know? Turning off lights when you leave a room can cut your electricity bill by up to 10% annually!",
     "Did you know? Unplugging chargers when not in use prevents ‘phantom’ energy loss, saving you money over time.",
@@ -40,7 +57,9 @@ export const Analytics = () => {
   }, []);
   return (
     <AnimatedPage>
-      <h2 style={{ marginLeft: "40px", color: "#163466" }}>Hello, Peter</h2>
+      <h2 style={{ marginLeft: "40px", color: "#163466" }}>
+        Hello, {energyData[0]?.username}
+      </h2>
 
       <div className="analytics-page">
         <div className="analytics-top">
@@ -80,9 +99,7 @@ export const Analytics = () => {
             </h1>
             <div className="pie-chart-data">
               <EnergyPieChart />
-              <div>
-                
-              </div>
+              <div>2</div>
             </div>
           </div>
         </div>
