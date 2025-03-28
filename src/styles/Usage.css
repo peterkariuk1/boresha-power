@@ -250,7 +250,7 @@ height:80vh;
 background-color: beige;
 width:30%;
 border-radius: 20px ;
-
+}
 .tips {
   height: 80vh;
 
@@ -289,7 +289,7 @@ border-radius: 20px ;
 .btn-logout{
   width:90px;
   border-radius:10px 50px;
-
+}
 
 .btn-logout {
   width: 90px;
@@ -447,22 +447,4 @@ gap: 30px;
 .advice-bar-2 div h2 {
   font-size: 19px;
   color: rgb(0, 4, 52);
-}
-
-
-
-
-/*Reports page*/
-.report-page {
-  display: flex;
-  flex-direction: column;
-  padding: 1dvb;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.chart{
-
 }
