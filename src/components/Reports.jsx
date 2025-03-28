@@ -62,14 +62,14 @@ export const Reports = () => {
               <img src={img4} />
               <h1>Current Usage</h1>
               <h2>
-                <span>KSHs. </span>1260.23
+                <span>Kwh </span>120.23
               </h2>
             </div>
             <div>
               <img src={img3} />
               <h1>Proposed Usage</h1>
               <h2>
-                <span>KSHs. </span>1260.23
+                <span>Kwh </span>109.23
               </h2>
             </div>
           </div>

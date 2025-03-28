@@ -74,7 +74,10 @@ export const Analytics = () => {
             </div>
             <div>
               <h1>
-                <span>KSHs. </span>230.02
+                <span>KSHs. </span>{(Object.values(energyData[0]?.consumedWatts || {})
+  .reduce((sum, value) => sum + value, 0) * 23.14).toFixed(2)}
+
+
               </h1>
             </div>
           </div>
@@ -89,7 +92,8 @@ export const Analytics = () => {
             </div>
             <div>
               <h1>
-                12 <span>kWh </span>
+              {Object.values(energyData[0]?.consumedWatts || {}).reduce((sum, value) => sum + value, 0)} <span>kWh</span>
+
               </h1>
             </div>
           </div>
