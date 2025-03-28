@@ -99,7 +99,6 @@ export const Analytics = () => {
             </h1>
             <div className="pie-chart-data">
               <EnergyPieChart />
-              <div>2</div>
             </div>
           </div>
         </div>
