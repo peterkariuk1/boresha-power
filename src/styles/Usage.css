@@ -322,7 +322,7 @@ button:hover {
   background-color:var(--secondary-color);
 }
 
-=======
+
 
 .buttons {
   display: flex;
@@ -360,3 +360,4 @@ button:active {
   background-color: #004494;
   transform: scale(0.98);
 
+}
