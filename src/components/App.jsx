@@ -29,7 +29,7 @@ function App() {
       <Route path="/" element={<GetStarted />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/usage/*" element={<Usage />} />
+      <Route path="/usage/*" element={<Usage  data = {energyData}/>} />
       <Route path="/appliances" element={<Appliances />} />
     </Routes>
   );
