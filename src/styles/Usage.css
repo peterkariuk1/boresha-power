@@ -240,7 +240,6 @@ padding-left: 5px;
 
 .tips{
 height:80vh;
-
 background-color: beige;
 width:30%;
 border-radius: 20px ;
@@ -279,10 +278,7 @@ justify-content:space-between;
   width:90px;
   border-radius:10px 50px;
 
-
 }
-
-
 
 .settings-item {
   margin-bottom: 20px;
@@ -322,7 +318,6 @@ button:hover {
   background-color:var(--secondary-color);
 }
 
-=======
 
 .buttons {
   display: flex;
@@ -360,3 +355,20 @@ button:active {
   background-color: #004494;
   transform: scale(0.98);
 
+}
+
+
+/*Reports page*/
+.report-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1dvb;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.chart{
+  
+}

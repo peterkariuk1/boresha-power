@@ -5,11 +5,11 @@ import "../styles/GetStarted.css";
 
 const slides = [
   {
-    image: "src/assets/homes.jpeg",
+    image: "src/assets/homes2.jpeg",
     text: "Welcome to Boresha Power! Our mission is to help you track, understand, and optimize your energy consumption with ease.",
   },
   {
-    image: "src/assets/saving.jpeg",
+    image: "src/assets/appsaves2.jpeg",
     text: "Discover energy-saving tips and reduce your electricity costs effortlessly.",
   },
   {
@@ -32,6 +32,8 @@ const GetStarted = () => {
   };
   return (
     <div className="getting-started">  
+
+
 
 
         <div className="slide-content">
@@ -60,6 +62,7 @@ const GetStarted = () => {
       
       </div>
     </div>
+    
   );
 };
 

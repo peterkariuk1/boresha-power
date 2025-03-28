@@ -1,4 +1,4 @@
-import "dotenv/config";  // ✅ No need for require
+
 
 import express from "express";
 
