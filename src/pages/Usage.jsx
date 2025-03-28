@@ -7,10 +7,11 @@ import { News } from "../components/News.jsx";
 import { Reports } from "../components/Reports.jsx";
 import { Settings } from "../components/Settings.jsx";
 
+
 import "../styles/Usage.css";
 
 export const Usage = () => {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <div className="usage-page">
@@ -28,10 +29,38 @@ export const Usage = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <Routes location={location}>
-              <Route path="/" element={<AnimatedPage><Analytics /></AnimatedPage>} />
-              <Route path="/news" element={<AnimatedPage><News /></AnimatedPage>} />
-              <Route path="/reports" element={<AnimatedPage><Reports /></AnimatedPage>} />
-              <Route path="/settings" element={<AnimatedPage><Settings /></AnimatedPage>} />
+              <Route
+                path="/"
+                element={
+                  <AnimatedPage>
+                    <Analytics />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/news"
+                element={
+                  <AnimatedPage>
+                    <News />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/reports"
+                element={
+                  <AnimatedPage>
+                    <Reports />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/settings"
+                element={
+                  <AnimatedPage>
+                    <Settings />
+                  </AnimatedPage>
+                }
+              />
             </Routes>
           </motion.div>
         </AnimatePresence>
