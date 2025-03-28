@@ -244,8 +244,16 @@
   padding-left: 5px;
 }
 
+
+.tips{
+height:80vh;
+background-color: beige;
+width:30%;
+border-radius: 20px ;
+
 .tips {
   height: 80vh;
+
 
   background-color: beige;
   width: 30%;
@@ -277,9 +285,16 @@
   justify-content: space-between;
 }
 
+
+.btn-logout{
+  width:90px;
+  border-radius:10px 50px;
+
+
 .btn-logout {
   width: 90px;
   border-radius: 10px 50px;
+
 }
 
 .settings-item {
@@ -319,6 +334,7 @@ button:hover {
   border-color: background-color;
   background-color: var(--secondary-color);
 }
+
 
 .buttons {
   display: flex;
@@ -432,5 +448,21 @@ gap: 30px;
   font-size: 19px;
   color: rgb(0, 4, 52);
 }
+
+
+
+
+/*Reports page*/
+.report-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1dvb;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.chart{
 
 }

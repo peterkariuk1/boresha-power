@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../styles/Appliances.css';
-import { appliances as applianceData,  } from '../assets/assets';  // Ensure correct path for the data
+import { appliances as applianceData } from '../assets/assets'; 
 
 const Appliances = () => {
   const [selectedAppliances, setSelectedAppliances] = useState([]); 
   const [numRooms, setNumRooms] = useState(1);
-  
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Handle appliance selection or deselection
   const handleSelect = (applianceName) => {
@@ -13,10 +14,11 @@ const Appliances = () => {
       const updatedSelection = prevSelected.includes(applianceName)
         ? prevSelected.filter((item) => item !== applianceName)  // Deselect
         : [...prevSelected, applianceName]; 
-        const selectedItem=applianceData.find((item)=> item.name===applianceName);
-        if(selectedItem){
-          console.log(`Selected appliance: ${selectedItem.name}, Kilowatts: ${selectedItem.kilowatts}`);
-        }
+
+      const selectedItem = applianceData.find((item) => item.name === applianceName);
+      if (selectedItem) {
+        console.log(`Selected appliance: ${selectedItem.name}, Kilowatts: ${selectedItem.kilowatts}`);
+      }
 
       return updatedSelection;
     });
@@ -25,14 +27,18 @@ const Appliances = () => {
   // Handle number of rooms change
   const handleRoomChanges = (event) => {
     setNumRooms(event.target.value);
-  }
-  //handles the submision
+  };
+
+  // Handle form submission and navigate
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Selected Appliances:', selectedAppliances);
     console.log('Number of Rooms:', numRooms);
     window.alert('Selected Appliances: ' + selectedAppliances + '\nNumber of Rooms: ' + numRooms);
-  }
+    
+    // Navigate to the "/usage" page
+    navigate('/usage');
+  };
 
   return (
     <div>
@@ -47,7 +53,6 @@ const Appliances = () => {
           onChange={handleRoomChanges}
           className="room-slider"
           step={1}
-          
         />
         <div className="slider-value">
           <span>{numRooms} {numRooms === 1 ? 'room' : 'rooms'}</span>
@@ -69,8 +74,9 @@ const Appliances = () => {
             </div>
           ))}
         </div>
+
         <div className="submit-container">
-          <button  onClick={handleSubmit} className='submit-btn'>Submit</button>
+          <button onClick={handleSubmit} className='submit-btn'>Submit</button>
         </div>
       </div>
     </div>

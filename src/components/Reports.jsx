@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatedPage } from "../components/AnimatedPage";
+import "../styles/Usage.css";
 import { EnergyBarChart1 } from "./EnergyBarChart1";
 import { EnergyBarChart2 } from "./EnergyBarChart2";
 import img1 from "../assets/savings.png";
@@ -8,6 +9,7 @@ import img3 from "../assets/unitEnergy.png";
 import img4 from "../assets/usage.png";
 import tipLogo from "../assets/tipLogo.png";
 import { motion } from "framer-motion";
+
 
 export const Reports = () => {
   const energyTips = [
@@ -41,6 +43,24 @@ export const Reports = () => {
   }, []);
   return (
     <AnimatedPage>
+
+     <div className="report">
+      <div clasName="header">
+      <h1 className="heading">BoreshaPower</h1>
+      <h2 className="heading2">Track you Power Track your Future</h2>
+      </div>
+      <div className="report-page">
+      <h3>Weekly Energy Usage Report</h3>
+<div className="chart">
+
+<div >
+</div>
+
+</div>
+      </div>
+      
+     </div>
+=======
       <div className="reports-container">
         <h1>Power Up Your Savings: ENERGY USAGE</h1>
         <div className="top">
